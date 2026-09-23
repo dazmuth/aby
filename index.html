@@ -11,7 +11,7 @@
 <meta property="og:description" content="A children's book about being brave enough to always be yourself. Celebrating 25 years of Spot.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.abypress.com/">
-<meta property="og:image" content="https://www.abypress.com/assets/hero-spot.jpg">
+<meta property="og:image" content="https://www.abypress.com/assets/banner-gray.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="canonical" href="https://www.abypress.com/">
@@ -30,7 +30,7 @@
   "datePublished": "2026",
   "inLanguage": "en",
   "url": "https://www.abypress.com/",
-  "image": "https://www.abypress.com/assets/hero-spot.jpg",
+  "image": "https://www.abypress.com/assets/banner-gray.jpg",
   "offers": {
     "@type": "Offer",
     "price": "25.00",
@@ -126,21 +126,20 @@
   .hero{
     background: var(--blue);
     color:#fff;
-    padding: 56px 0 0;
+    padding: 40px 0 0;
     overflow:hidden;
   }
-  .hero .wrap{
-    display:grid; grid-template-columns: 1.1fr .9fr; gap:40px; align-items:center;
+  .hero .wrap{ display:flex; justify-content:center; }
+  .banner-panel{
+    width:100%; max-width: 640px; border-radius: 18px; overflow:hidden;
+    box-shadow: 0 20px 44px rgba(0,0,0,.28);
   }
-  .eyebrow{
-    display:inline-block; background:rgba(255,255,255,.18); padding:6px 14px;
-    border-radius:30px; font-weight:700; letter-spacing:.06em; font-size:.78rem;
-    text-transform:uppercase; margin-bottom:18px;
+  .banner-panel img{ width:100%; height:auto; display:block; }
+  .banner-cta{
+    background: #717171; /* matches banner-gray.jpg's background so the buttons read as part of the banner */
+    padding: 26px 24px 34px;
   }
-  .hero h1{ font-size: 3rem; color:#fff; }
-  .hero h1 .accent{ color:#FFE07A; }
-  .hero p.lede{ font-size:1.15rem; opacity:.95; max-width: 520px; }
-  .hero-btns{ display:flex; gap:14px; margin-top:28px; flex-wrap:wrap; }
+  .hero-btns{ display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
   .btn{
     display:inline-block; padding:14px 26px; border-radius:30px; font-weight:700;
     text-decoration:none; font-size:1rem; border:2px solid transparent; cursor:pointer;
@@ -149,23 +148,35 @@
   .btn-primary:hover{ background:#c81217; }
   .btn-ghost{ background:transparent; color:#fff; border-color:#fff; }
   .btn-ghost:hover{ background:rgba(255,255,255,.15); }
-  .hero-art{ text-align:center; }
-  .hero-art img{ margin: 0 auto; max-width: 380px; filter: drop-shadow(0 20px 30px rgba(0,0,0,.25)); }
   .wave{ display:block; width:100%; margin-top:40px; }
 
   /* ---------- MEET SPOT ---------- */
-  .meet{ background: var(--white); }
-  .meet-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:48px; align-items:start; }
-  .meet h2{ font-size:2.1rem; color: var(--black); }
-  .meet h2 .u{ color: var(--red); }
-  .lesson-list{ list-style:none; margin: 20px 0; padding:0; }
+  .meet{
+    background-image: url('assets/endpaper-pattern.jpg');
+    background-repeat: repeat;
+    background-size: 420px;
+    padding: 60px 0;
+  }
+  .meet-card{
+    max-width: 640px; margin: 0 auto; background:#fff; border-radius:18px;
+    padding: 36px 32px; box-shadow: 0 14px 34px rgba(0,0,0,.14);
+  }
+  .meet h2{ font-size:1.9rem; color: var(--black); }
+  .lesson-list{ list-style:none; margin: 20px 0 0; padding:0; }
   .lesson-list li{
     padding: 14px 18px; margin-bottom:10px; background: var(--cream);
     border-left:4px solid var(--red); border-radius:6px; font-weight:600;
   }
-  .book-meta{ margin-top: 26px; font-size:.92rem; color:#555; border-top:1px solid #eee; padding-top:18px; }
+  .book-meta-wrap{
+    max-width: 640px; margin: 22px auto 0; background: rgba(255,255,255,.9);
+    border-radius:14px; padding:20px 28px;
+  }
+  .book-meta{ font-size:.92rem; color:#555; }
   .book-meta div{ margin-bottom:4px; }
-  @media (max-width: 760px){ .meet-grid{ grid-template-columns: 1fr; } }
+  @media (max-width: 540px){
+    .meet-card{ padding:28px 22px; }
+    .book-meta-wrap{ padding:18px 20px; }
+  }
 
   /* ---------- PRAISE / PRESS ---------- */
   .praise{ background: var(--cream); }
@@ -280,17 +291,14 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <div>
-      <span class="eyebrow">25th Anniversary Edition</span>
-      <h1>25 years of teaching kids to <span class="accent">always be themselves.</span></h1>
-      <p class="lede">Spot is a puppy with a big secret. As his spots disappear, he learns what it costs to hide who you are — and what it means to finally stop. A quarter-century later, his story is more welcome than ever.</p>
-      <div class="hero-btns">
-        <a href="#buy" class="btn btn-primary">Get the 25th Anniversary Edition</a>
-        <a href="#praise" class="btn btn-ghost">See the Praise &amp; Press</a>
+    <div class="banner-panel">
+      <img src="assets/banner-gray.jpg" alt="ABY Press presents Spot, 25th Anniversary Edition — a heartwarming story about courage, friendship, and being true to yourself">
+      <div class="banner-cta">
+        <div class="hero-btns">
+          <a href="#buy" class="btn btn-primary">Get the 25th Anniversary Edition</a>
+          <a href="#praise" class="btn btn-ghost">See the Praise &amp; Press</a>
+        </div>
       </div>
-    </div>
-    <div class="hero-art">
-      <img src="assets/hero-spot.jpg" alt="Spot, a white puppy with black spots, wearing a red collar with a tag that says SPOT">
     </div>
   </div>
   <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" style="height:60px;">
@@ -300,28 +308,25 @@
 
 <!-- ============ MEET SPOT ============ -->
 <section class="meet" id="meet-spot">
-  <div class="wrap meet-grid">
-    <div>
+  <div class="wrap">
+    <div class="meet-card">
       <span class="section-tag">The Book</span>
       <h2>Meet Spot, and the town that couldn't accept him.</h2>
       <p>In Barksville, every dog has spots — and dogs without them are chased away. When Spot's own spots start to fade, he paints them back on every day rather than let anyone find out who he really is.</p>
-      <p>When he finally washes the paint away to do the right thing, his friends and family turn on him. It takes a spotless dog named Boxer — one Spot once helped chase off — to show him what real acceptance looks like.</p>
-      <p><strong>Spot</strong> doesn't spell out what it's really about. It doesn't have to. Readers who've felt pressure to hide part of themselves tend to recognize the story immediately — which is exactly why, in 2001, it became a target, and exactly why ABY Press is bringing it back for a new generation.</p>
-      <p style="margin-top:24px;"><strong>What can we learn from Spot?</strong></p>
+      <p style="margin-top:20px;"><strong>What can we learn from Spot?</strong></p>
       <ul class="lesson-list">
         <li>Always be yourself.</li>
         <li>Treat everyone with respect, especially if they are different.</li>
         <li>We are all special because we are different.</li>
       </ul>
+    </div>
+    <div class="book-meta-wrap">
       <div class="book-meta">
         <div><strong>Written and illustrated by</strong> Todd Tuttle</div>
         <div><strong>First edition</strong> 2001, Window Books</div>
         <div><strong>This edition</strong> 25th Anniversary Edition, 2026, ABY Press</div>
         <div><strong>ISBN</strong> 979-8-234-09684-5</div>
       </div>
-    </div>
-    <div>
-      <img src="assets/endpaper-pattern.jpg" alt="" style="border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.1);">
     </div>
   </div>
 </section>
@@ -457,7 +462,7 @@
     </div>
     <div>
       <h4>Contact</h4>
-      <p>Los Angeles, CA<br><a href="mailto:hello@abypress.com">hello@abypress.com</a></p>
+      <p>Contact info coming soon.</p>
     </div>
   </div>
 
