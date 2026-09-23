@@ -124,20 +124,21 @@
 
   /* ---------- HERO ---------- */
   .hero{
-    background: var(--blue);
+    background: #717171; /* matches banner-gray.jpg's own background so image + section read as one field */
     color:#fff;
     padding: 40px 0 0;
     overflow:hidden;
   }
-  .hero .wrap{ display:flex; justify-content:center; }
+  .hero .wrap{ display:flex; flex-direction:column; align-items:center; }
   .banner-panel{
-    width:100%; max-width: 640px; border-radius: 18px; overflow:hidden;
-    box-shadow: 0 20px 44px rgba(0,0,0,.28);
+    width:100%; max-width: 420px;
   }
-  .banner-panel img{ width:100%; height:auto; display:block; }
+  .banner-panel img{
+    width:100%; height:auto; display:block; border-radius: 14px;
+    box-shadow: 0 16px 36px rgba(0,0,0,.35);
+  }
   .banner-cta{
-    background: #717171; /* matches banner-gray.jpg's background so the buttons read as part of the banner */
-    padding: 26px 24px 34px;
+    padding: 28px 24px 34px;
   }
   .hero-btns{ display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
   .btn{
