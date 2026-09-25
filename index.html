@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spot — 25th Anniversary Edition | ABY Press</title>
-<meta name="description" content="Spot, the beloved children's book about acceptance and courage, returns for its 25th Anniversary Edition from ABY Press. Read the praise, press and history behind the book — and order your copy, or gift one to a charity that empowers children.">
+<title>Spot — 25th Anniversary Edition | Aby Press</title>
+<meta name="description" content="Spot, the beloved children's book about acceptance and courage, returns for its 25th Anniversary Edition from Aby Press. Read the praise, press and history behind the book — and order your copy, or gift one to a charity that empowers children.">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Spot — 25th Anniversary Edition | ABY Press">
+<meta property="og:title" content="Spot — 25th Anniversary Edition | Aby Press">
 <meta property="og:description" content="A children's book about being brave enough to always be yourself. Celebrating 25 years of Spot.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.abypress.com/">
-<meta property="og:image" content="https://www.abypress.com/assets/banner-gray.jpg">
+<meta property="og:image" content="https://www.abypress.com/assets/hero-montage.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="canonical" href="https://www.abypress.com/">
@@ -24,16 +24,16 @@
   "name": "Spot",
   "author": { "@type": "Person", "name": "Todd Tuttle" },
   "illustrator": { "@type": "Person", "name": "Todd Tuttle" },
-  "publisher": { "@type": "Organization", "name": "ABY Press" },
+  "publisher": { "@type": "Organization", "name": "Aby Press" },
   "isbn": "979-8-234-09684-5",
   "bookEdition": "25th Anniversary Edition",
   "datePublished": "2026",
   "inLanguage": "en",
   "url": "https://www.abypress.com/",
-  "image": "https://www.abypress.com/assets/banner-gray.jpg",
+  "image": "https://www.abypress.com/assets/hero-montage.jpg",
   "offers": {
     "@type": "Offer",
-    "price": "25.00",
+    "price": "17.99",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock"
   }
@@ -45,9 +45,9 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "ABY Press",
+  "name": "Aby Press",
   "url": "https://www.abypress.com/",
-  "description": "ABY Press publishes children's books that celebrate diversity and teach kids to always be themselves.",
+  "description": "Aby Press publishes children's books that celebrate diversity and teach kids to always be themselves.",
   "slogan": "Always Be Yourself"
 }
 </script>
@@ -124,23 +124,28 @@
 
   /* ---------- HERO ---------- */
   .hero{
-    background: #717171; /* matches banner-gray.jpg's own background so image + section read as one field */
+    background: #2b2b2b;
     color:#fff;
-    padding: 40px 0 0;
+    padding: 38px 0 44px;
+    text-align:center;
     overflow:hidden;
   }
-  .hero .wrap{ display:flex; flex-direction:column; align-items:center; }
-  .banner-panel{
-    width:100%; max-width: 420px;
+  .hero .wrap{ padding-left:16px; padding-right:16px; }
+  .logo-plate{
+    display:inline-block; background:#fff; border-radius:10px; padding:10px 16px;
+    margin-bottom:22px;
   }
-  .banner-panel img{
-    width:100%; height:auto; display:block; border-radius: 14px;
+  .logo-plate img{ display:block; width:220px; height:auto; margin:0 auto; }
+  .montage-wrap{ max-width:1100px; margin:0 auto; }
+  .montage-wrap img{
+    width:100%; height:auto; display:block; border-radius:10px;
     box-shadow: 0 16px 36px rgba(0,0,0,.35);
   }
-  .banner-cta{
-    padding: 28px 24px 34px;
+  .tagline{
+    color:#fff; font-weight:800; font-size:1.3rem; line-height:1.4; max-width:640px;
+    margin:26px auto 0; text-shadow:0 2px 10px rgba(0,0,0,.5);
   }
-  .hero-btns{ display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
+  .hero-btns{ display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:28px; }
   .btn{
     display:inline-block; padding:14px 26px; border-radius:30px; font-weight:700;
     text-decoration:none; font-size:1rem; border:2px solid transparent; cursor:pointer;
@@ -149,24 +154,59 @@
   .btn-primary:hover{ background:#c81217; }
   .btn-ghost{ background:transparent; color:#fff; border-color:#fff; }
   .btn-ghost:hover{ background:rgba(255,255,255,.15); }
-  .wave{ display:block; width:100%; margin-top:40px; }
+  @media (max-width:600px){
+    .logo-plate img{ width:170px; }
+    .tagline{ font-size:1.08rem; }
+  }
 
   /* ---------- MEET SPOT ---------- */
   .meet{
-    background-image: url('assets/endpaper-pattern.jpg');
-    background-repeat: repeat;
-    background-size: 420px;
+    background: #2b2b2b;
     padding: 60px 0;
   }
+  .meet-row{
+    display:flex; gap:32px; align-items:stretch; max-width:1040px; margin:0 auto;
+  }
   .meet-card{
-    max-width: 640px; margin: 0 auto; background:#fff; border-radius:18px;
-    padding: 36px 32px; box-shadow: 0 14px 34px rgba(0,0,0,.14);
+    flex:1 1 56%; background:#fff; border-radius:18px;
+    padding: 36px 32px; box-shadow: 0 14px 34px rgba(0,0,0,.3);
+  }
+  .meet-photo{ flex:1 1 40%; display:flex; align-items:center; }
+  .meet-photo img{
+    width:100%; height:auto; border-radius:18px; display:block;
+    box-shadow: 0 14px 34px rgba(0,0,0,.3);
   }
   .meet h2{ font-size:1.9rem; color: var(--black); }
-  .lesson-list{ list-style:none; margin: 20px 0 0; padding:0; }
-  .lesson-list li{
-    padding: 14px 18px; margin-bottom:10px; background: var(--cream);
-    border-left:4px solid var(--red); border-radius:6px; font-weight:600;
+  @media (max-width: 760px){
+    .meet-row{ flex-direction:column; }
+  }
+
+  /* ---------- FLASHCARDS ---------- */
+  .flash-intro{ margin-top:20px; }
+  .flash-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; margin-top:16px; }
+  .flash-card{
+    aspect-ratio: 1 / 1; perspective: 1000px; cursor:pointer; border-radius:12px;
+  }
+  .flash-card:hover{ transform: translateY(-3px); transition: transform .2s; }
+  .flash-inner{
+    position:relative; width:100%; height:100%;
+    transition: transform .5s; transform-style: preserve-3d;
+  }
+  .flash-card.is-flipped .flash-inner{ transform: rotateY(180deg); }
+  .flash-front, .flash-back{
+    position:absolute; inset:0; backface-visibility:hidden; border-radius:12px;
+    overflow:hidden; box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  }
+  .flash-front{ background: var(--cream); }
+  .flash-front img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .flash-back{
+    background: var(--red); color:#fff; transform: rotateY(180deg);
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    padding:14px; font-weight:700; font-size:.92rem; line-height:1.3;
+  }
+  @media (max-width: 540px){
+    .flash-grid{ grid-template-columns: 1fr; }
+    .flash-card{ aspect-ratio: 3.2 / 1; }
   }
   .book-meta-wrap{
     max-width: 640px; margin: 22px auto 0; background: rgba(255,255,255,.9);
@@ -222,11 +262,19 @@
     border:2px solid #eee; border-radius:16px; padding:32px; text-align:center;
   }
   .buy-card.highlight{ border-color: var(--red); position:relative; }
+  .buy-card h3{ margin-bottom:2px; }
+  .buy-card .buy-subhead{
+    font-size:.85rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
+    color: var(--blue-dark); margin-bottom:8px;
+  }
   .buy-card .price{ font-size:2.4rem; font-weight:800; color: var(--black); margin: 10px 0; }
   .buy-card .price span{ font-size:1rem; font-weight:600; color:#777; }
   .buy-card ul{ list-style:none; padding:0; margin: 18px 0; text-align:left; color:#444; font-size:.95rem; }
-  .buy-card ul li{ padding:6px 0; padding-left:26px; position:relative; }
-  .buy-card ul li:before{ content:"🐾"; position:absolute; left:0; }
+  .buy-card ul li{ padding:6px 0; padding-left:30px; position:relative; }
+  .buy-card ul li:before{
+    content:""; position:absolute; left:0; top:9px; width:18px; height:18px;
+    background: url('assets/paw-bullet.png') no-repeat center / contain;
+  }
   .stripe-btn{
     display:block; width:100%; padding:15px; border-radius:30px; font-weight:700;
     font-size:1.05rem; border:none; cursor:pointer; margin-top:10px;
@@ -292,40 +340,59 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <div class="banner-panel">
-      <img src="assets/banner-gray.jpg" alt="ABY Press presents Spot, 25th Anniversary Edition — a heartwarming story about courage, friendship, and being true to yourself">
-      <div class="banner-cta">
-        <div class="hero-btns">
-          <a href="#buy" class="btn btn-primary">Get the 25th Anniversary Edition</a>
-          <a href="#praise" class="btn btn-ghost">See the Praise &amp; Press</a>
-        </div>
-      </div>
+    <div class="logo-plate">
+      <img src="assets/hero-logo.jpg" alt="Aby Press — Always Be Yourself">
+    </div>
+    <div class="montage-wrap">
+      <img src="assets/hero-montage.jpg" alt="Photo montage of Spot, the dog from Todd Tuttle's 25th Anniversary Edition storybook">
+    </div>
+    <div class="tagline">A Heartwarming Story About Courage, Friendship, and Being True to Yourself!</div>
+    <div class="hero-btns">
+      <a href="#buy" class="btn btn-primary">Get the 25th Anniversary Edition</a>
+      <a href="#praise" class="btn btn-ghost">See the Praise &amp; Press</a>
     </div>
   </div>
-  <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" style="height:60px;">
-    <path fill="#ffffff" d="M0,32 C240,80 480,0 720,32 C960,64 1200,16 1440,40 L1440,80 L0,80 Z"></path>
-  </svg>
 </section>
 
 <!-- ============ MEET SPOT ============ -->
 <section class="meet" id="meet-spot">
   <div class="wrap">
-    <div class="meet-card">
-      <span class="section-tag">The Book</span>
-      <h2>Meet Spot, and the town that couldn't accept him.</h2>
-      <p>In Barksville, every dog has spots — and dogs without them are chased away. When Spot's own spots start to fade, he paints them back on every day rather than let anyone find out who he really is.</p>
-      <p style="margin-top:20px;"><strong>What can we learn from Spot?</strong></p>
-      <ul class="lesson-list">
-        <li>Always be yourself.</li>
-        <li>Treat everyone with respect, especially if they are different.</li>
-        <li>We are all special because we are different.</li>
-      </ul>
+    <div class="meet-row">
+      <div class="meet-card">
+        <span class="section-tag">The Book</span>
+        <h2>Meet Spot, and the town that couldn't accept him.</h2>
+        <p>In Barksville, every dog has spots — and dogs without them are chased away. When Spot's own spots start to fade, he paints them back on every day rather than let anyone find out who he really is.</p>
+        <p class="flash-intro"><strong>What can we learn from Spot? Click a card to find out.</strong></p>
+        <div class="flash-grid">
+          <div class="flash-card" role="button" tabindex="0" aria-label="Flip card to reveal a lesson from Spot">
+            <div class="flash-inner">
+              <div class="flash-front"><img src="assets/paw-flashcard.jpg" alt="Paw print — click to reveal"></div>
+              <div class="flash-back"><p>Always be yourself.</p></div>
+            </div>
+          </div>
+          <div class="flash-card" role="button" tabindex="0" aria-label="Flip card to reveal a lesson from Spot">
+            <div class="flash-inner">
+              <div class="flash-front"><img src="assets/paw-flashcard.jpg" alt="Paw print — click to reveal"></div>
+              <div class="flash-back"><p>Treat everyone with respect, especially if they are different.</p></div>
+            </div>
+          </div>
+          <div class="flash-card" role="button" tabindex="0" aria-label="Flip card to reveal a lesson from Spot">
+            <div class="flash-inner">
+              <div class="flash-front"><img src="assets/paw-flashcard.jpg" alt="Paw print — click to reveal"></div>
+              <div class="flash-back"><p>We are all special because we are different.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="meet-photo">
+        <img src="assets/todd-then-now.png" alt="Todd Tuttle holding a Spot plush toy in 2001, and again 25 years later in 2026">
+      </div>
     </div>
     <div class="book-meta-wrap">
       <div class="book-meta">
         <div><strong>Written and illustrated by</strong> Todd Tuttle</div>
         <div><strong>First edition</strong> 2001, Window Books</div>
-        <div><strong>This edition</strong> 25th Anniversary Edition, 2026, ABY Press</div>
+        <div><strong>This edition</strong> 25th Anniversary Edition, 2026, Aby Press</div>
         <div><strong>ISBN</strong> 979-8-234-09684-5</div>
       </div>
     </div>
@@ -348,7 +415,7 @@
       </div>
       <div class="quote-card">
         <p>"Todd Tuttle's imaginative and complex children's book, Spot, effectively teaches tolerance to a young audience."</p>
-        <cite>— Ashley Simpson, teacher and writer</cite>
+        <cite>— Ashley S., teacher and writer</cite>
       </div>
       <div class="quote-card">
         <p>"The book, Spot, is a children's book with very complex morals. It teaches acceptance, respect and forgiveness."</p>
@@ -407,21 +474,22 @@
     <div class="buy-grid">
       <div class="buy-card highlight">
         <h3>Buy a Copy</h3>
-        <div class="price">$25 <span>USD</span></div>
+        <div class="price">$17.99 <span>USD</span></div>
         <ul>
           <li>25th Anniversary Edition, softcover</li>
-          <li>Shipped directly from ABY Press</li>
+          <li>Shipped directly from Aby Press</li>
           <li>Signed by Todd Tuttle (while supplies last)</li>
         </ul>
-        <button class="stripe-btn buy-self" data-stripe-link="STRIPE_PAYMENT_LINK_BUY_SELF">Buy for $25</button>
+        <button class="stripe-btn buy-self" data-stripe-link="STRIPE_PAYMENT_LINK_BUY_SELF">Buy for $17.99</button>
         <div class="placeholder-note">Placeholder button — will link to a Stripe Payment Link once set up.</div>
       </div>
 
       <div class="buy-card">
-        <h3>Gift a Copy to Charity</h3>
-        <div class="price">$25 <span>USD</span></div>
+        <h3>Adopt a Spot</h3>
+        <div class="buy-subhead">Gift a Copy to Charity</div>
+        <div class="price">$17.99 <span>USD</span></div>
         <ul>
-          <li>ABY Press ships a copy on your behalf</li>
+          <li>Aby Press ships a copy on your behalf</li>
           <li>Choose the organization below</li>
           <li>Not a tax-deductible donation — this is a gift purchase</li>
         </ul>
@@ -430,7 +498,7 @@
           <option>[Children's hospital — TBD]</option>
           <option>[Disability-empowerment org — TBD]</option>
         </select>
-        <button class="stripe-btn buy-gift" data-stripe-link="STRIPE_PAYMENT_LINK_GIFT">Gift for $25</button>
+        <button class="stripe-btn buy-gift" data-stripe-link="STRIPE_PAYMENT_LINK_GIFT">Adopt for $17.99</button>
         <div class="placeholder-note">Placeholder — needs the approved charity list and a Stripe Payment Link with a charity dropdown field.</div>
       </div>
     </div>
@@ -445,8 +513,8 @@
       <span class="section-tag">The Author</span>
       <h2>About Todd Tuttle</h2>
       <p>Todd Tuttle is the author and illustrator of <em>Spot</em>, originally published by Window Books in 2001. Based in Southern California, he creates inclusive stories and expressive artwork that reflect humor, heart and imagination. Through Spot and his other creative work, Todd celebrates stories where every child can see themselves.</p>
-      <p>ABY Press — "Always Be Yourself" — takes its name straight from the lesson at the end of Spot's story. Spot is the first of several planned children's books celebrating diversity, including stories that speak to racial and disability experiences.</p>
-      <div class="next">Coming next: ABY Films, bringing these stories to life on screen.</div>
+      <p>Aby Press — "Always Be Yourself" — takes its name straight from the lesson at the end of Spot's story. Spot is the first of several planned children's books celebrating diversity, including stories that speak to racial and disability experiences.</p>
+      <div class="next">Coming next: Aby Films, bringing these stories to life on screen.</div>
     </div>
   </div>
 </section>
@@ -454,8 +522,9 @@
 <footer>
   <div class="wrap footer-grid">
     <div>
-      <h4>ABY Press</h4>
+      <h4>Aby Press</h4>
       <p style="max-width:280px;">Always Be Yourself. Children's books that tell kids the truth: they are worth loving exactly as they are.</p>
+      <p style="margin-top:10px;"><a href="https://www.abypress.com">www.abypress.com</a></p>
     </div>
     <div>
       <h4>Explore</h4>
@@ -468,13 +537,23 @@
   </div>
 
   <div class="wrap privacy-note">
-    <strong>Privacy note:</strong> ABY Press does not knowingly collect personal information from children. This site is intended for parents, teachers, librarians and other adult visitors. Purchases are processed securely by Stripe; ABY Press does not store payment card information. If you sign up for updates, we use your email only to send news about ABY Press books and never sell or share it with third parties.
+    <strong>Privacy note:</strong> Aby Press does not knowingly collect personal information from children. This site is intended for parents, teachers, librarians and other adult visitors. Purchases are processed securely by Stripe; Aby Press does not store payment card information. If you sign up for updates, we use your email only to send news about Aby Press books and never sell or share it with third parties.
   </div>
 
   <div class="wrap copyright">
-    Copyright 2026 ABY Press. All rights reserved.
+    Copyright 2026 Aby Press. All rights reserved.
   </div>
 </footer>
+
+<script>
+  document.querySelectorAll('.flash-card').forEach(function(card){
+    function toggle(){ card.classList.toggle('is-flipped'); }
+    card.addEventListener('click', toggle);
+    card.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+</script>
 
 </body>
 </html>
