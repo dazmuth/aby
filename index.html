@@ -278,6 +278,7 @@
   .stripe-btn{
     display:block; width:100%; padding:15px; border-radius:30px; font-weight:700;
     font-size:1.05rem; border:none; cursor:pointer; margin-top:10px;
+    text-decoration:none; text-align:center;
   }
   .stripe-btn.buy-self{ background: var(--red); color:#fff; }
   .stripe-btn.buy-gift{ background: var(--blue); color:#fff; }
@@ -480,8 +481,8 @@
           <li>Shipped directly from Aby Press</li>
           <li>Signed by Todd Tuttle (while supplies last)</li>
         </ul>
-        <button class="stripe-btn buy-self" data-stripe-link="STRIPE_PAYMENT_LINK_BUY_SELF">Buy for $17.99</button>
-        <div class="placeholder-note">Placeholder button — will link to a Stripe Payment Link once set up.</div>
+        <a class="stripe-btn buy-self" href="https://buy.stripe.com/test_4gMeVc9zL1hu2DpcRKffy00">Buy for $17.99</a>
+        <div class="placeholder-note">Test mode — this goes to Stripe's sandbox checkout. Use a Stripe test card (4242 4242 4242 4242, any future expiry/CVC) to try it. We'll swap in the live link once Todd's account is verified.</div>
       </div>
 
       <div class="buy-card">
