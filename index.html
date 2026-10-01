@@ -286,10 +286,21 @@
     margin-top:14px; font-size:.78rem; color:#999; background:#fafafa; border:1px dashed #ddd;
     border-radius:8px; padding:8px 10px;
   }
-  .charity-select{
-    width:100%; padding:12px; border-radius:8px; border:1px solid #ddd; margin-top:14px;
-    font-size:.95rem; background:#fff;
+  .gift-options{
+    list-style:none; padding:0; margin:12px 0 4px; text-align:left; font-size:.88rem; color:#555;
   }
+  .gift-options li{ padding:4px 0 4px 18px; position:relative; }
+  .gift-options li:before{ content:"–"; position:absolute; left:0; color:var(--blue-dark); }
+  .gift-disclaimer{
+    margin-top:12px; font-size:.78rem; color:#888; text-align:left; line-height:1.5;
+  }
+  .partner-panel{ margin-top:14px; text-align:left; border-top:1px solid #eee; padding-top:12px; }
+  .partner-panel summary{ cursor:pointer; font-size:.85rem; font-weight:700; color:var(--blue-dark); }
+  .partner-panel summary:hover{ color:var(--blue); }
+  .partner-list{ list-style:none; padding:0; margin:12px 0 0; font-size:.82rem; color:#555; text-align:left; }
+  .partner-list li{ padding:8px 0; border-top:1px dashed #eee; }
+  .partner-list li:first-child{ border-top:none; padding-top:0; }
+  .partner-list strong{ color:var(--black); display:block; margin-bottom:2px; }
   @media (max-width: 760px){ .buy-grid{ grid-template-columns: 1fr; } }
 
   /* ---------- ABOUT TODD ---------- */
@@ -470,7 +481,7 @@
   <div class="wrap">
     <span class="section-tag center" style="display:block; text-align:center;">Get the Book</span>
     <h2>Bring Spot home — for your family, or for a family who needs him.</h2>
-    <p class="sub">The 25th Anniversary Edition is available now. Buy a copy for yourself, or gift one to a children's hospital or a disability-empowerment charity.</p>
+    <p class="sub">The 25th Anniversary Edition is available now. Buy a copy for yourself, or adopt one for a child, family, or community that needs him most.</p>
 
     <div class="buy-grid">
       <div class="buy-card highlight">
@@ -490,17 +501,30 @@
         <div class="buy-subhead">Gift a Copy to Charity</div>
         <div class="price">$17.99 <span>USD</span></div>
         <ul>
-          <li>Aby Press ships a copy on your behalf</li>
-          <li>Choose the organization below</li>
+          <li>Aby Press ships a new copy on your behalf</li>
+          <li>You'll choose a category at checkout</li>
           <li>Not a tax-deductible donation — this is a gift purchase</li>
         </ul>
-        <select class="charity-select" disabled>
-          <option>Select a charity — coming soon</option>
-          <option>[Children's hospital — TBD]</option>
-          <option>[Disability-empowerment org — TBD]</option>
-        </select>
+        <ul class="gift-options">
+          <li>A child building a home library</li>
+          <li>A child in foster care or a family-support program</li>
+          <li>A community where diverse and affirming books are needed</li>
+          <li>A Little Free Library in a book-access community</li>
+          <li>Where Spot is needed most <em>(default)</em></li>
+        </ul>
+        <div class="gift-disclaimer">Donation partners and book-acceptance guidelines can change. If the category you choose can't accept a copy when it's time to ship, we'll donate it to another comparable, approved organization instead. Donated copies are shipped in batches.</div>
+        <details class="partner-panel">
+          <summary>See our current donation partners</summary>
+          <ul class="partner-list">
+            <li><strong>Book Harvest</strong> — Durham, NC. Helps children and families build home libraries.</li>
+            <li><strong>Children's Book Project</strong> — San Francisco, CA. Provides inclusive, affirming books to children and youth.</li>
+            <li><strong>Little Free Library</strong> — A nationwide network of community book-sharing boxes.</li>
+            <li><strong>Make Good</strong> — Books and support for foster and vulnerable youth.</li>
+            <li><strong>Reading Is Fundamental of Southern California</strong> — Literacy support for underserved LA &amp; Orange County communities.</li>
+          </ul>
+        </details>
         <button class="stripe-btn buy-gift" data-stripe-link="STRIPE_PAYMENT_LINK_GIFT">Adopt for $17.99</button>
-        <div class="placeholder-note">Placeholder — needs the approved charity list and a Stripe Payment Link with a charity dropdown field.</div>
+        <div class="placeholder-note">Placeholder — needs the Stripe Payment Link for Adopt-a-Spot, built with the 5-option dropdown custom field (exact wording below in chat).</div>
       </div>
     </div>
   </div>
@@ -533,7 +557,8 @@
     </div>
     <div>
       <h4>Contact</h4>
-      <p>Contact info coming soon.</p>
+      <p><a href="mailto:todd@abypress.com">todd@abypress.com</a><br><span style="opacity:.7;">General questions &amp; support</span></p>
+      <p style="margin-top:10px;"><a href="mailto:spot@abypress.com">spot@abypress.com</a><br><span style="opacity:.7;">Write to Spot</span></p>
     </div>
   </div>
 
