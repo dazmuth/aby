@@ -33,7 +33,7 @@
   "image": "https://www.abypress.com/assets/spot-25th-anniversary-collage.png",
   "offers": {
     "@type": "Offer",
-    "price": "17.99",
+    "price": "22.99",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock"
   }
@@ -290,8 +290,9 @@
     font-size:.85rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
     color: var(--blue-dark); margin-bottom:8px;
   }
-  .buy-card .price{ font-size:2.4rem; font-weight:800; color: var(--black); margin: 10px 0; }
+  .buy-card .price{ font-size:2.4rem; font-weight:800; color: var(--black); margin: 10px 0 0; }
   .buy-card .price span{ font-size:1rem; font-weight:600; color:#777; }
+  .buy-card .price-note{ font-size:.82rem; color:#777; margin:2px 0 14px; }
   .buy-card ul{ list-style:none; padding:0; margin: 18px 0; text-align:left; color:#444; font-size:.95rem; }
   .buy-card ul li{ padding:6px 0; padding-left:30px; position:relative; }
   .buy-card ul li:before{
@@ -508,20 +509,23 @@
     <div class="buy-grid">
       <div class="buy-card highlight">
         <h3>Buy a Copy</h3>
-        <div class="price">$17.99 <span>USD</span></div>
+        <div class="price">$22.99 <span>USD</span></div>
+        <div class="price-note">Each — shipping included, any quantity</div>
         <ul>
-          <li>25th Anniversary Edition, softcover</li>
+          <li>25th Anniversary Edition, hardcover</li>
           <li>Shipped directly from Aby Press</li>
+          <li>$5 extra to expedite</li>
           <li>Signed by Todd Tuttle (while supplies last)</li>
         </ul>
-        <a class="stripe-btn buy-self" href="https://buy.stripe.com/test_4gMeVc9zL1hu2DpcRKffy00">Buy for $17.99</a>
+        <a class="stripe-btn buy-self" href="https://buy.stripe.com/test_4gMeVc9zL1hu2DpcRKffy00">Buy for $22.99</a>
         <div class="placeholder-note">Test mode — this goes to Stripe's sandbox checkout. Use a Stripe test card (4242 4242 4242 4242, any future expiry/CVC) to try it. We'll swap in the live link once Todd's account is verified.</div>
       </div>
 
       <div class="buy-card">
         <h3>Adopt a Spot</h3>
         <div class="buy-subhead">Gift a Copy to Charity</div>
-        <div class="price">$17.99 <span>USD</span></div>
+        <div class="price">$22.99 <span>USD</span></div>
+        <div class="price-note">Each — for as many copies as you wish to donate</div>
         <ul>
           <li>Aby Press ships a new copy on your behalf</li>
           <li>You'll choose a category at checkout</li>
@@ -546,7 +550,7 @@
             <li><strong>Reading Is Fundamental of Southern California</strong> Literacy support for underserved LA &amp; Orange County communities.</li>
           </ul>
         </details>
-        <a class="stripe-btn buy-gift" href="https://buy.stripe.com/test_6oU28qfY90dqdi3eZSffy01">Adopt for $17.99</a>
+        <a class="stripe-btn buy-gift" href="https://buy.stripe.com/test_6oU28qfY90dqdi3eZSffy01">Adopt for $22.99</a>
         <div class="placeholder-note">Test mode — this goes to Stripe's sandbox checkout, where you'll pick a category from the dropdown. Use a Stripe test card (4242 4242 4242 4242, any future expiry/CVC) to try it. We'll swap in the live link once Todd's account is verified.</div>
       </div>
     </div>
