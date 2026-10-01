@@ -11,7 +11,7 @@
 <meta property="og:description" content="A children's book about being brave enough to always be yourself. Celebrating 25 years of Spot.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.abypress.com/">
-<meta property="og:image" content="https://www.abypress.com/assets/hero-montage.jpg">
+<meta property="og:image" content="https://www.abypress.com/assets/spot-25th-anniversary-collage.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="canonical" href="https://www.abypress.com/">
@@ -30,7 +30,7 @@
   "datePublished": "2026",
   "inLanguage": "en",
   "url": "https://www.abypress.com/",
-  "image": "https://www.abypress.com/assets/hero-montage.jpg",
+  "image": "https://www.abypress.com/assets/spot-25th-anniversary-collage.jpg",
   "offers": {
     "@type": "Offer",
     "price": "17.99",
@@ -103,12 +103,9 @@
     padding: 14px 24px;
   }
   .logo{
-    display:flex; align-items:center; gap:10px;
-    font-weight:800; font-size: 1.05rem; text-decoration:none; color: var(--black);
+    font-weight:700; font-size: 1.2rem; text-decoration:none; color: var(--black);
     font-family:"Baloo 2", sans-serif;
   }
-  .logo .aby{ background:var(--blue); color:#fff; padding:3px 8px; border-radius:4px; }
-  .logo .press{ background:var(--gray); color:#fff; padding:3px 8px; border-radius:4px; }
   nav ul{ list-style:none; display:flex; gap:26px; margin:0; padding:0; }
   nav ul a{ text-decoration:none; color: var(--text); font-weight:600; font-size:.95rem; }
   nav ul a:hover{ color: var(--blue-dark); }
@@ -161,7 +158,7 @@
 
   /* ---------- MEET SPOT ---------- */
   .meet{
-    background: #2b2b2b;
+    background: #1c1c1c url('assets/fur-background.jpg') center/cover no-repeat;
     padding: 60px 0;
   }
   .meet-row{
@@ -169,16 +166,20 @@
   }
   .meet-card{
     flex:1 1 56%; background:#fff; border-radius:18px;
-    padding: 36px 32px; box-shadow: 0 14px 34px rgba(0,0,0,.3);
+    padding: 36px 32px; box-shadow: 0 14px 34px rgba(0,0,0,.35);
   }
-  .meet-photo{ flex:1 1 40%; display:flex; align-items:center; }
-  .meet-photo img{
-    width:100%; height:auto; border-radius:18px; display:block;
-    box-shadow: 0 14px 34px rgba(0,0,0,.3);
+  .meet-photo{ flex:1 1 40%; position:relative; min-height:460px; }
+  .todd-photo{
+    position:absolute; background:#fff; padding:10px 10px 14px; border-radius:10px;
+    box-shadow: 0 14px 30px rgba(0,0,0,.4);
   }
+  .todd-photo img{ width:100%; height:auto; border-radius:4px; display:block; }
+  .todd-2026{ width:70%; top:0; right:4%; transform:rotate(4deg); z-index:2; }
+  .todd-2001{ width:56%; bottom:0; left:2%; transform:rotate(-6deg); z-index:3; }
   .meet h2{ font-size:1.9rem; color: var(--black); }
   @media (max-width: 760px){
     .meet-row{ flex-direction:column; }
+    .meet-photo{ flex:0 0 380px; height:380px; min-height:0; margin-top:30px; width:100%; }
   }
 
   /* ---------- FLASHCARDS ---------- */
@@ -236,6 +237,10 @@
   }
   .clip{
     background:#fff; border-radius:10px; overflow:hidden; box-shadow: 0 4px 14px rgba(0,0,0,.08);
+    cursor: zoom-in; transition: transform .15s, box-shadow .15s;
+  }
+  .clip:hover, .clip:focus-visible{
+    transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,.14); outline:none;
   }
   .clip img{ width:100%; height:190px; object-fit:cover; object-position: top; }
   .clip figcaption{ padding:10px 12px; font-size:.8rem; color:#555; margin:0; }
@@ -243,6 +248,22 @@
   figure{ margin:0; }
   @media (max-width: 900px){ .clip-gallery{ grid-template-columns: repeat(2,1fr); } }
   @media (max-width: 520px){ .clip-gallery{ grid-template-columns: 1fr; } }
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox{
+    position:fixed; inset:0; background:rgba(0,0,0,.86); z-index:200;
+    display:none; align-items:center; justify-content:center; padding:30px;
+    cursor: zoom-out;
+  }
+  .lightbox.is-open{ display:flex; }
+  .lightbox img{
+    max-width:92vw; max-height:88vh; border-radius:8px; cursor:default;
+    box-shadow: 0 20px 60px rgba(0,0,0,.5); display:block;
+  }
+  .lightbox-close{
+    position:absolute; top:16px; right:20px; background:none; border:none;
+    color:#fff; font-size:2.4rem; line-height:1; cursor:pointer; padding:6px 10px;
+  }
 
   .accolade-strip{
     margin-top: 46px; background: var(--black); border-radius: 14px; padding: 30px;
@@ -286,8 +307,11 @@
     margin-top:14px; font-size:.78rem; color:#999; background:#fafafa; border:1px dashed #ddd;
     border-radius:8px; padding:8px 10px;
   }
+  .gift-options-label{
+    font-weight:700; font-size:.9rem; color:var(--black); text-align:left; margin-top:12px;
+  }
   .gift-options{
-    list-style:none; padding:0; margin:12px 0 4px; text-align:left; font-size:.88rem; color:#555;
+    list-style:none; padding:0; margin:8px 0 4px; text-align:left; font-size:.88rem; color:#555;
   }
   .gift-options li{ padding:4px 0 4px 18px; position:relative; }
   .gift-options li:before{ content:"–"; position:absolute; left:0; color:var(--blue-dark); }
@@ -335,9 +359,7 @@
 
 <header>
   <nav class="wrap">
-    <a href="#top" class="logo">
-      <span class="aby">Aby</span><span class="press">Press</span>
-    </a>
+    <a href="#top" class="logo">abypress.com</a>
     <ul class="nav-links">
       <li><a href="#meet-spot">Meet Spot</a></li>
       <li><a href="#praise">Praise &amp; Press</a></li>
@@ -353,10 +375,10 @@
 <section class="hero">
   <div class="wrap">
     <div class="logo-plate">
-      <img src="assets/hero-logo.jpg" alt="Aby Press — Always Be Yourself">
+      <img src="assets/aby-press-logo.jpg" alt="Aby Press — Always Be Yourself">
     </div>
     <div class="montage-wrap">
-      <img src="assets/hero-montage.jpg" alt="Photo montage of Spot, the dog from Todd Tuttle's 25th Anniversary Edition storybook">
+      <img src="assets/spot-25th-anniversary-collage.jpg" alt="Photo montage of Spot the dog and the cover of Todd Tuttle's 25th Anniversary Edition storybook">
     </div>
     <div class="tagline">A Heartwarming Story About Courage, Friendship, and Being True to Yourself!</div>
     <div class="hero-btns">
@@ -397,7 +419,12 @@
         </div>
       </div>
       <div class="meet-photo">
-        <img src="assets/todd-then-now.png" alt="Todd Tuttle holding a Spot plush toy in 2001, and again 25 years later in 2026">
+        <div class="todd-photo todd-2026">
+          <img src="assets/todd-spot-2026.jpg" alt="Todd Tuttle holding a Spot plush toy in 2026, on the 25th anniversary of the book">
+        </div>
+        <div class="todd-photo todd-2001">
+          <img src="assets/todd-spot-2001.jpg" alt="Todd Tuttle holding a Spot plush toy in 2001, the year Spot was first published">
+        </div>
       </div>
     </div>
     <div class="book-meta-wrap">
@@ -436,34 +463,27 @@
     </div>
 
     <div class="clip-gallery">
-      <figure class="clip">
-        <img src="assets/press-betty-white.jpg" alt="Handwritten letter from Betty White to Todd Tuttle, dated August 6, 2001">
+      <figure class="clip" role="button" tabindex="0" aria-label="Enlarge image: Betty White's handwritten letter">
+        <img src="assets/betty-spot-letter.jpg" alt="Handwritten letter from Betty White to Todd Tuttle, dated August 6, 2001, thanking him for sharing Spot">
         <figcaption><b>Betty White</b>Personal letter, Aug. 2001</figcaption>
       </figure>
-      <figure class="clip">
-        <img src="assets/press-southern-voice-front.jpg" alt="Southern Voice front page teaser headlined 'See gay Spot'">
-        <figcaption><b>Southern Voice</b>Front page, Aug. 2001</figcaption>
+      <figure class="clip" role="button" tabindex="0" aria-label="Enlarge image: signed photo from Betty White">
+        <img src="assets/betty-spot-photo-w-dog.jpg" alt="Signed photo of Betty White with her dog, inscribed to Todd Tuttle">
+        <figcaption><b>Betty White</b>Signed photo, with her dog</figcaption>
       </figure>
-      <figure class="clip">
-        <img src="assets/press-seattle-gay-news.jpg" alt="Seattle Gay News article headlined 'Religious Right kicks puppy'">
-        <figcaption><b>Seattle Gay News</b>"Religious Right kicks puppy," 2001</figcaption>
+      <figure class="clip" role="button" tabindex="0" aria-label="Enlarge image: uu&me! magazine cover">
+        <img src="assets/uua-front.jpg" alt="Cover of uu&amp;me! magazine, September 2002 issue">
+        <figcaption><b>uu&amp;me! Magazine</b>Cover, Sept. 2002</figcaption>
       </figure>
-      <figure class="clip">
-        <img src="assets/press-focus-on-family.jpg" alt="Focus on the Family article headlined 'Author Admits Gay Propaganda in Kids Book'">
-        <figcaption><b>Focus on the Family</b>The attack, Aug. 28, 2001</figcaption>
+      <figure class="clip" role="button" tabindex="0" aria-label="Enlarge image: the Adventures of Spot comic spread">
+        <img src="assets/uua-spot-comic-spread.jpg" alt="Two-page comic spread titled 'The Adventures of Spot, the Spotless Dog,' reprinted in uu&amp;me! magazine, September 2002">
+        <figcaption><b>uu&amp;me! Magazine</b>"Adventures of Spot" comic, Sept. 2002</figcaption>
       </figure>
-      <figure class="clip">
-        <img src="assets/press-teacher-review.jpg" alt="Magazine feature: 'Spot: A Puppy's Tale of Tolerance'">
-        <figcaption><b>A Puppy's Tale of Tolerance</b>Classroom review, 2001</figcaption>
-      </figure>
-      <figure class="clip">
-        <img src="assets/press-gift-guide.jpg" alt="Holiday gift guide listing for Spot">
-        <figcaption><b>Holiday Gift Guide</b>"For ages 4 to 104," 2001</figcaption>
-      </figure>
-      <figure class="clip">
-        <img src="assets/press-uua-comic.jpg" alt="Comic reprint titled 'The Adventures of Spot the Spotless Dog'">
-        <figcaption><b>uu&amp;me! Magazine</b>Comic reprint, Sept. 2002</figcaption>
-      </figure>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" aria-label="Close enlarged image">&times;</button>
+      <img src="" alt="">
     </div>
 
     <div class="accolade-strip">
@@ -505,6 +525,7 @@
           <li>You'll choose a category at checkout</li>
           <li>Not a tax-deductible donation — this is a gift purchase</li>
         </ul>
+        <div class="gift-options-label">Adopt-a-Spot for:</div>
         <ul class="gift-options">
           <li>A child building a home library</li>
           <li>A child in foster care or a family-support program</li>
@@ -516,15 +537,15 @@
         <details class="partner-panel">
           <summary>See our current donation partners</summary>
           <ul class="partner-list">
-            <li><strong>Book Harvest</strong> — Durham, NC. Helps children and families build home libraries.</li>
-            <li><strong>Children's Book Project</strong> — San Francisco, CA. Provides inclusive, affirming books to children and youth.</li>
-            <li><strong>Little Free Library</strong> — A nationwide network of community book-sharing boxes.</li>
-            <li><strong>Make Good</strong> — Books and support for foster and vulnerable youth.</li>
-            <li><strong>Reading Is Fundamental of Southern California</strong> — Literacy support for underserved LA &amp; Orange County communities.</li>
+            <li><strong>Book Harvest</strong> Durham, NC. Helps children and families build home libraries.</li>
+            <li><strong>Children's Book Project</strong> San Francisco, CA. Provides inclusive, affirming books to children and youth.</li>
+            <li><strong>Little Free Library</strong> A nationwide network of community book-sharing boxes.</li>
+            <li><strong>Make Good</strong> Books and support for foster and vulnerable youth.</li>
+            <li><strong>Reading Is Fundamental of Southern California</strong> Literacy support for underserved LA &amp; Orange County communities.</li>
           </ul>
         </details>
-        <button class="stripe-btn buy-gift" data-stripe-link="STRIPE_PAYMENT_LINK_GIFT">Adopt for $17.99</button>
-        <div class="placeholder-note">Placeholder — needs the Stripe Payment Link for Adopt-a-Spot, built with the 5-option dropdown custom field (exact wording below in chat).</div>
+        <a class="stripe-btn buy-gift" href="https://buy.stripe.com/test_6oU28qfY90dqdi3eZSffy01">Adopt for $17.99</a>
+        <div class="placeholder-note">Test mode — this goes to Stripe's sandbox checkout, where you'll pick a category from the dropdown. Use a Stripe test card (4242 4242 4242 4242, any future expiry/CVC) to try it. We'll swap in the live link once Todd's account is verified.</div>
       </div>
     </div>
   </div>
@@ -572,6 +593,38 @@
 </footer>
 
 <script>
+  (function(){
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = lightbox.querySelector('img');
+    var closeBtn = lightbox.querySelector('.lightbox-close');
+
+    function openLightbox(clip){
+      var src = clip.querySelector('img').getAttribute('src');
+      var alt = clip.querySelector('img').getAttribute('alt');
+      lightboxImg.setAttribute('src', src);
+      lightboxImg.setAttribute('alt', alt);
+      lightbox.classList.add('is-open');
+    }
+    function closeLightbox(){
+      lightbox.classList.remove('is-open');
+      lightboxImg.setAttribute('src', '');
+    }
+
+    document.querySelectorAll('.clip').forEach(function(clip){
+      clip.addEventListener('click', function(){ openLightbox(clip); });
+      clip.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openLightbox(clip); }
+      });
+    });
+    lightbox.addEventListener('click', function(e){
+      if (e.target === lightbox) closeLightbox();
+    });
+    closeBtn.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    });
+  })();
+
   document.querySelectorAll('.flash-card').forEach(function(card){
     function toggle(){ card.classList.toggle('is-flipped'); }
     card.addEventListener('click', toggle);
