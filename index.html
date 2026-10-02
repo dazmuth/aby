@@ -291,6 +291,9 @@
     filter: drop-shadow(0 12px 22px rgba(0,0,0,.18));
     background:#fff;
   }
+  @media (min-width:760px){
+    .spot-bed-video{ width:820px; max-width:70vw; }
+  }
   .spot-bed-badge{
     position:absolute; top:6px; right:4px; background: var(--red); color:#fff; font-weight:700;
     font-size:.78rem; padding:7px 14px; border-radius:30px; box-shadow:0 4px 10px rgba(0,0,0,.25);
@@ -718,7 +721,7 @@
         return;
       }
       hasPlayed = true;
-      caption.textContent = 'Watch Spot go to bed…';
+      caption.textContent = '';
       badge.textContent = '▶ Playing…';
       video.play();
     });
