@@ -286,14 +286,22 @@
   }
   .spot-bed-link:hover .spot-bed-wrap,
   .spot-bed-link:focus-visible .spot-bed-wrap{ transform: translateY(-5px); }
-  .spot-bed-wrap img{
-    width:340px; max-width:72vw; height:auto; margin:0 auto;
+  .spot-bed-video{
+    width:340px; max-width:72vw; height:auto; margin:0 auto; display:block;
     filter: drop-shadow(0 12px 22px rgba(0,0,0,.18));
+    background:#fff;
   }
   .spot-bed-badge{
     position:absolute; top:6px; right:4px; background: var(--red); color:#fff; font-weight:700;
     font-size:.78rem; padding:7px 14px; border-radius:30px; box-shadow:0 4px 10px rgba(0,0,0,.25);
-    white-space:nowrap;
+    white-space:nowrap; transition: background .2s;
+  }
+  .spot-bed-badge.is-pulsing{
+    animation: spot-bed-pulse 1s ease-in-out infinite;
+  }
+  @keyframes spot-bed-pulse{
+    0%, 100%{ transform: scale(1); }
+    50%{ transform: scale(1.08); }
   }
   .spot-bed-caption{
     margin-top:16px; font-weight:700; color: var(--blue-dark); font-size:1.05rem;
@@ -534,13 +542,16 @@
     <p class="center" style="max-width:560px; margin: 12px auto 28px; color:#555;">
       Spot answers all emails and loves to answer questions about life in Barksville and Bonebury.
     </p>
-    <a href="mailto:spot@abypress.com" class="spot-bed-link" aria-label="Email Spot at spot@abypress.com">
+    <div class="spot-bed-link" role="button" tabindex="0" id="spotBedTrigger" aria-label="Play a video of Spot going to bed, then email him at spot@abypress.com">
       <div class="spot-bed-wrap">
-        <img src="assets/spots-bed.png" alt="Spot's cozy dog bed, with a ball and a bone">
-        <span class="spot-bed-badge">✉️ Email Spot!</span>
+        <video class="spot-bed-video" id="spotBedVideo" poster="assets/spot-and-bed.png" muted playsinline preload="metadata">
+          <source src="assets/spot-walks-to-bed-bone.webm" type="video/webm">
+          <source src="assets/spot-walks-to-bed-bone.mp4" type="video/mp4">
+        </video>
+        <span class="spot-bed-badge" id="spotBedBadge">✉️ Email Spot!</span>
       </div>
-      <div class="spot-bed-caption">Click Spot's bed to send him a message</div>
-    </a>
+      <div class="spot-bed-caption" id="spotBedCaption">Click Spot's bed to send him a message</div>
+    </div>
   </div>
 </section>
 
@@ -673,6 +684,46 @@
     closeBtn.addEventListener('click', closeLightbox);
     document.addEventListener('keydown', function(e){
       if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    });
+  })();
+
+  (function(){
+    var trigger = document.getElementById('spotBedTrigger');
+    var video = document.getElementById('spotBedVideo');
+    var badge = document.getElementById('spotBedBadge');
+    var caption = document.getElementById('spotBedCaption');
+    if (!trigger || !video) return;
+    var SPOT_EMAIL = 'mailto:spot@abypress.com';
+    var hasPlayed = false;
+
+    function openEmail(){
+      window.location.href = SPOT_EMAIL;
+    }
+
+    function onVideoEnded(){
+      caption.textContent = 'Tap Spot to send him a message!';
+      badge.textContent = '✉️ Email Spot!';
+      badge.classList.add('is-pulsing');
+      // Try to open the email prompt automatically. Some mobile browsers
+      // block a mailto redirect that isn't triggered by a direct click,
+      // so the badge above keeps pulsing as a one-tap fallback either way.
+      openEmail();
+    }
+
+    video.addEventListener('ended', onVideoEnded);
+
+    trigger.addEventListener('click', function(){
+      if (hasPlayed){
+        openEmail();
+        return;
+      }
+      hasPlayed = true;
+      caption.textContent = 'Watch Spot go to bed…';
+      badge.textContent = '▶ Playing…';
+      video.play();
+    });
+    trigger.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); trigger.click(); }
     });
   })();
 
