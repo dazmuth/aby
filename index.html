@@ -35,7 +35,8 @@
     "@type": "Offer",
     "price": "17.99",
     "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock"
+    "availability": "https://schema.org/PreOrder",
+    "availabilityStarts": "2026-11-10"
   }
 }
 </script>
@@ -344,6 +345,9 @@
   }
   .stripe-btn.buy-self{ background: var(--red); color:#fff; }
   .stripe-btn.buy-gift{ background: var(--blue); color:#fff; }
+  .stripe-btn.is-soon{ background:#9aa1a8; color:#fff; cursor:default; pointer-events:none; }
+  .soon-note{ margin-top:14px; font-size:.85rem; color:#555; }
+  .soon-note a{ color: var(--blue-dark); }
   .placeholder-note{
     margin-top:14px; font-size:.78rem; color:#999; background:#fafafa; border:1px dashed #ddd;
     border-radius:8px; padding:8px 10px;
@@ -574,7 +578,7 @@
   <div class="wrap">
     <span class="section-tag center" style="display:block; text-align:center;">Get the Book</span>
     <h2>Bring Spot home — for your family, or for a family who needs him.</h2>
-    <p class="sub">The 25th Anniversary Edition is available now. Buy a copy for yourself, or adopt one for a child, family, or community that needs him most.</p>
+    <p class="sub">Orders open November 10, 2026. Buy a copy for yourself, or adopt one for a child, family, or community that needs him most.</p>
 
     <div class="buy-grid">
       <div class="buy-card highlight">
@@ -587,8 +591,9 @@
           <li>$5 extra to expedite — any quantity</li>
           <li>Signed by Todd Tuttle (while supplies last)</li>
         </ul>
-        <a target="_blank" rel="noopener" class="stripe-btn buy-self" href="https://buy.stripe.com/test_4gMeVc9zL1hu2DpcRKffy00">Buy for $17.99</a>
-        <div class="placeholder-note">Test mode — this goes to Stripe's sandbox checkout. Use a Stripe test card (4242 4242 4242 4242, any future expiry/CVC) to try it. We'll swap in the live link once Todd's account is verified.</div>
+        <!-- LAUNCH: replace the "Coming soon" button below with the live Stripe link. Test link: https://buy.stripe.com/test_4gMeVc9zL1hu2DpcRKffy00 -->
+        <div class="stripe-btn buy-self is-soon" aria-disabled="true">Coming soon</div>
+        <div class="soon-note">Orders open November 10, 2026. Questions? Email <a href="mailto:support@abypress.com">support@abypress.com</a>.</div>
       </div>
 
       <div class="buy-card">
@@ -620,8 +625,9 @@
             <li><strong>Reading Is Fundamental of Southern California</strong> Literacy support for underserved LA &amp; Orange County communities.</li>
           </ul>
         </details>
-        <a target="_blank" rel="noopener" class="stripe-btn buy-gift" href="https://buy.stripe.com/test_6oU28qfY90dqdi3eZSffy01">Adopt for $17.99</a>
-        <div class="placeholder-note">Test mode — this goes to Stripe's sandbox checkout, where you'll pick a category from the dropdown. Use a Stripe test card (4242 4242 4242 4242, any future expiry/CVC) to try it. We'll swap in the live link once Todd's account is verified.</div>
+        <!-- LAUNCH: replace the "Coming soon" button below with the live Stripe link. Test link: https://buy.stripe.com/test_6oU28qfY90dqdi3eZSffy01 -->
+        <div class="stripe-btn buy-gift is-soon" aria-disabled="true">Coming soon</div>
+        <div class="soon-note">Orders open November 10, 2026. Questions? Email <a href="mailto:support@abypress.com">support@abypress.com</a>.</div>
       </div>
     </div>
 
